@@ -45,12 +45,6 @@ def collect_requests(compUrl):
     allRequests.append(r.text)
     return
     
-# for compUrl in compUrlListFull[:10]:
-#     print(compUrl)
-#     r = requests.get(compUrl, headers = headers)
-#     #s = BeautifulSoup(r.text, 'html.parser')
-#     allRequests.append(r.text)
-        
     
 with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.map(collect_requests, compUrlListFull[200000:400000])
